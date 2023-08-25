@@ -1,12 +1,16 @@
 import { useContext } from "react";
 import {
   AvatarPokemon,
+  ButtonDiv,
   CapturarButton,
   CardContainer,
   Cardbox,
   DetailsPokemon,
   DetailsPokemonButton,
+  ImagePokebola,
   ImagePokemon,
+  PokeTypes,
+  PokeTypesImg,
   PokemonId,
   PokemonName,
   PokemonType,
@@ -16,6 +20,8 @@ import {
 } from "./styles";
 import { useLocation } from "react-router-dom";
 import { CardFunctionsContext } from "../../Contexts/CardFunctionsContext";
+import pokebola from "../../assets/images/pokebola.png";
+import { getTypeImageByType } from "../../assets/functionType/functionType";
 
 function Card({ pokemon }) {
   const location = useLocation();
@@ -56,24 +62,26 @@ function Card({ pokemon }) {
 
           <TypeOfPokemon>
             <PokemonType>
-              <div>
-                {Object.values(pokemon.types).map((typeInfo) => {
-                  return (
-                    <TextPokemonType>{typeInfo.type.name}</TextPokemonType>
-                  );
-                })}
-              </div>
+              {Object.values(pokemon.types).map((typeInfo) => {
+                return (
+                  <PokeTypesImg
+                    key={typeInfo.type.name}
+                    src={getTypeImageByType(typeInfo.type.name)}
+                  />
+                );
+              })}
             </PokemonType>
           </TypeOfPokemon>
-          <DetailsPokemonButton>Detalhes</DetailsPokemonButton>
+          <DetailsPokemonButton /* onClick={} */>Detalhes</DetailsPokemonButton>
         </DetailsPokemon>
-
+        
         <AvatarPokemon>
+          <ImagePokebola src={pokebola}/>
           <ImagePokemon
             src={pokemon.sprites.other.dream_world.front_default}
             alt={`${pokemon.name} Image`}
           />
-
+          
           {renderButtonCard()}
         </AvatarPokemon>
       </Cardbox>

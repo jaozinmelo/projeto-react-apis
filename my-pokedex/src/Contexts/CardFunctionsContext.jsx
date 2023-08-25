@@ -38,11 +38,13 @@ export const CardFunctionsProvider = ({ children }) => {
     //pokemoncart.filter((item) => item.id !== id)
 
     if (checkPokemon) {
-      toast.error("Esse pokemon já foi capturado !");
-      return;
+      // toast.error("Esse pokemon já foi capturado !");
+      // return;
+      alert(`esse pokemon já foi adicionado`);
+    } else {
+      setPokemonCart([...pokemonCart, { ...pokemon, name, amount: 1 }]);
+      alert(`O Pokemon ${name} foi adicionado à sua pokedex!`);
     }
-
-    setPokemonCart([...pokemonCart, { ...pokemon, name, amount: 1 }]);
   };
 
   const removePokemon = (id) => {
@@ -60,6 +62,18 @@ export const CardFunctionsProvider = ({ children }) => {
     );
     setName(pokemonName);
   };
+
+  //FUNÇÕES POKEDEX
+  useEffect(() => {
+    const pokeball = localStorage.getItem("pokemon");
+    if (pokeball) {
+      setPokemonCart(JSON.parse(pokeball));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("pokemon", JSON.stringify(pokemonCart));
+  }, [pokemonCart]);
 
   return (
     <CardFunctionsContext.Provider

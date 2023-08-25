@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+<style>
+  @import
+  url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&family=Poppins:wght@700&display=swap');
+</style>;
+
 const getBackgroundColorByType = (type) => {
   switch (type) {
     case "bug":
@@ -43,7 +48,7 @@ const getBackgroundColorByType = (type) => {
   }
 };
 export const CardContainer = styled.div`
-  width: /* 27.5rem */440px;
+  width: /* 27.5rem */ 440px;
   height: 263px;
   position: relative;
 `;
@@ -51,43 +56,51 @@ export const Cardbox = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 2rem;
-  border-radius: 0.5rem;
+  border-radius: 8px;
   padding: 1.5rem;
-  width: /* 27.5rem */440px;
+  width: 440px;
   height: 210px;
   background: ${(props) => getBackgroundColorByType(props.type)};
-  /* position: absolute;
-  bottom: 0; */
 `;
 export const DetailsPokemon = styled.div`
   margin-top: 2rem;
   width: 50%;
   position: relative;
 `;
-export const PokemonId = styled.div`
+export const PokemonId = styled.h3`
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
   font: bold;
-  font-size: 0.75rem;
-  line-height: 0.75rem;
+  font-size: 16px;
+  line-height: 10px;
 `;
-export const PokemonName = styled.div`
+export const PokemonName = styled.h3`
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
   font: bold;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 32px;
+  line-height: 38.73px;
   text-transform: capitalize;
-  margin-top: 0.375rem;
 `;
 export const TypeOfPokemon = styled.div`
   display: flex;
   flex-direction: row;
 `;
+// tipos do pokemon
 export const PokemonType = styled.div`
-  border-radius: 0.25rem;
+  display: flex;
+  /* justify-content: center; */
   align-items: center;
-  justify-content: center;
-  padding: 0.25rem;
-  width: 4rem;
-  height: 1.5rem;
-  margin: 0.25rem 0 0 0.25rem;
+  width: 100%;
+  height: 50px;
+  margin: 0 auto;
+  gap: 5px;
+`;
+export const PokeTypesImg = styled.img`
+  width: 91px;
+  height: 31px;
 `;
 export const TextPokemonType = styled.div`
   font-weight: 500;
@@ -100,7 +113,7 @@ export const AvatarPokemon = styled.div`
   flex-direction: column;
   width: 50%;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -108,46 +121,63 @@ export const AvatarPokemon = styled.div`
 export const ImagePokemon = styled.img`
   width: 193px;
   height: 193px;
+  z-index: 1;
 `;
-export const CapturarButton = styled.div`
-  /* bg-orange-500 
-    hover:bg-red-700 
-    text-white 
-    font-bold  */
+export const ImagePokebola = styled.img`
+  /* width: 500px; */
+  /* height: 270px; */
+  position: absolute;
+  bottom: 21px;
+  right: 0;
+  z-index: 1;
+`;
+export const CapturarButton = styled.button`
+  font-weight: bold;
+  width: 146px;
+  height: 38px;
   background-color: white;
   padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
+  border-radius: 8px;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  &:hover{
-    
+  z-index: 1;
+  &:hover {
+    transition: ease-in-out;
     cursor: pointer;
-    background-color:  #FF6262;
-
+    background-color: #ff6262;
   }
 `;
-export const RemoveButton = styled.div`
-  /* bg-orange-500 
-    hover:bg-red-700 
-    text-white 
-    font-bold  */
-  background-color: #FF6262;
-;
+export const RemoveButton = styled.button`
+  width: 146px;
+  height: 38px;
+  font-weight: bold;
+  background-color: #ff6262;
   padding: 0.5rem 1rem;
-  border-radius: 0.25rem;
+  border-radius: 8px;
   margin-top: 2rem;
+  margin-bottom: 2rem;
+  z-index: 1;
+  &:hover {
+    transition: ease-in-out;
+    cursor: pointer;
+    background-color: #b82b2b;
+  }
 `;
-export const DetailsPokemonButton = styled.div`
+export const DetailsPokemonButton = styled.button`
+  font-family: "Poppins", sans-serif;
   background-color: transparent;
-  /* hover:bg-orange-500  */
-  font-weight: 600;
-  /* hover:text-white  */
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  &:hover{
+    color: #ffffffe1;
+    cursor: pointer;
+  }
   padding: 0.5rem 1rem;
-  border-width: 1px;
-  /* border-orange-500  */
-  /* hover:border-transparent 
-    rounded */
-  /* position: absolute;
-  bottom: 0;
-  left: 0; */
+  border: none;
+  text-decoration: underline;
+  height: 38px;
+  position: absolute;
+  bottom: -10px;
 `;
