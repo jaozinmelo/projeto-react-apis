@@ -46,7 +46,17 @@ export const ButtonPokelist = styled.button`
 `;
 export const DivButton = styled.div`
   display: flex;
-  background-image: linear-gradient(#5d5d5d #5d5d5d69 #5D5D5D);
+
 `;
 export const LogoPokedex = styled.img`
 `;
+
+export const AddToPokedexButton = styled.button`
+  border-radius: 8px;
+  background-color: #882525;
+  width: 17.938rem;
+  position: absolute;
+  right: 6.25rem;
+  height: 4.625;
+  padding: 10px 4px;
+  `;

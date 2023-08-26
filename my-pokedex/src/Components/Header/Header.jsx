@@ -1,11 +1,11 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { goToPokelistPage, goToPokedexPage } from "../../Router/Coordinator";
 import {
+  AddToPokedexButton,
   ButtonPokedex,
   ButtonPokelist,
   Container,
   DivButton,
-  Logo,
   LogoPokedex,
 } from "./styles";
 import pokedexlogo from "../../assets/images/pokedexlogo.png";
@@ -37,6 +37,16 @@ function Header() {
             </ButtonPokelist>
             <LogoPokedex src={pokedexlogo} />
           </DivButton>
+        );
+      case "/detail-page":
+        return (
+          <>
+            <ButtonPokelist onClick={() => goToPokelistPage(navigate)}>
+              <img src={arrowleft} alt="seta para esquerda" /> TODOS POKÉMONS
+            </ButtonPokelist>
+            <LogoPokedex src={pokedexlogo} />
+            <AddToPokedexButton>Adicionar Pokemon</AddToPokedexButton>
+          </>
         );
       default:
         return (

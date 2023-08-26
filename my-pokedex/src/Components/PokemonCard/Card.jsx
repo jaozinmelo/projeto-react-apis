@@ -18,12 +18,14 @@ import {
   TextPokemonType,
   TypeOfPokemon,
 } from "./styles";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { CardFunctionsContext } from "../../Contexts/CardFunctionsContext";
 import pokebola from "../../assets/images/pokebola.png";
 import { getTypeImageByType } from "../../assets/functionType/functionType";
+import { goToDetailsPage } from "../../Router/Coordinator";
 
 function Card({ pokemon }) {
+  const navigate = useNavigate()
   const location = useLocation();
   const { addToPokemon, removePokemon } = useContext(CardFunctionsContext);
   const renderButtonCard = () => {
@@ -72,7 +74,7 @@ function Card({ pokemon }) {
               })}
             </PokemonType>
           </TypeOfPokemon>
-          <DetailsPokemonButton /* onClick={} */>Detalhes</DetailsPokemonButton>
+          <DetailsPokemonButton onClick={()=> goToDetailsPage(navigate, pokemon.id)}>Detalhes</DetailsPokemonButton>
         </DetailsPokemon>
         
         <AvatarPokemon>

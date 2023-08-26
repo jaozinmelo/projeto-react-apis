@@ -1,21 +1,36 @@
-import React from 'react'
-import { BaseStatusDiv, DetailContainer, PokemonImagesDiv, SectionDetail } from './styles'
+import React from "react";
+import {
+  BaseStatusDiv,
+  DetailContainer,
+  DivAvatarPokemon,
+  DivImagePokemon,
+  MiniCard,
+  PokemonImagesDiv,
+  PokemonMoves,
+  SectionDetail,
+} from "./styles";
+import Header from "../../Components/Header/Header";
 
-const PokemonDetail = ({pokemon}) => {
+const PokemonDetail = ({ pokemon }) => {
   return (
-    <DetailContainer>
-      <h1>Detalhes</h1>
-      <SectionDetail>
-        <PokemonImagesDiv>
-          <div></div>
-          <div></div>
-        </PokemonImagesDiv>
-        <BaseStatusDiv></BaseStatusDiv>
-        <div></div>
-        <div></div>
-      </SectionDetail>
-    </DetailContainer>
-  )
-}
+    <>
+      <Header />
+      <DetailContainer>
+        <SectionDetail>
+          <PokemonImagesDiv>
+            <DivImagePokemon></DivImagePokemon>
+            <DivImagePokemon></DivImagePokemon>
+          </PokemonImagesDiv>
+          <BaseStatusDiv></BaseStatusDiv>
+          <div>
+            <PokemonMoves></PokemonMoves>
+            <MiniCard></MiniCard>
+          </div>
+          <DivAvatarPokemon></DivAvatarPokemon>
+        </SectionDetail>
+      </DetailContainer>
+    </>
+  );
+};
 
-export default PokemonDetail
+export default PokemonDetail;

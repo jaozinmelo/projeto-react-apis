@@ -11,7 +11,7 @@ const Router = () => {
         <Route path="/" element={<Pokelist />} />
         <Route path="/pokedex" element={<PokedexPage />} />
         <Route path="*" element={<NotFoundPage />} />
-        {/* <Route path={`/detail/:name/:types/:id`} element={<PokemonDetail />} /> */}
+        <Route path={`/detail-page`} element={<PokemonDetail />} />
       </Routes>
     </BrowserRouter>
   );
