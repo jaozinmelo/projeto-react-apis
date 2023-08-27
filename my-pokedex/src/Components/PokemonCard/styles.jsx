@@ -5,8 +5,8 @@ import styled from "styled-components";
   url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&family=Poppins:wght@700&display=swap');
 </style>;
 
-const getBackgroundColorByType = (type) => {
-  switch (type) {
+export const getBackgroundColorByType = (types) => {
+  switch (types) {
     case "bug":
       return "#76A866";
     case "dark":
@@ -20,19 +20,19 @@ const getBackgroundColorByType = (type) => {
     case "fighting":
       return "#C03028";
     case "fire":
-      return "#F08030";
+      return "#EAAB7D";
     case "flying":
       return "#A890F0";
     case "ghost":
       return "#705898";
     case "grass":
-      return "#78C850";
+      return "#729F92";
     case "ground":
       return "#E0C068";
     case "ice":
       return "#98D8D8";
     case "normal":
-      return "#A8A878";
+      return "#BF9762";
     case "poison":
       return "#A040A0";
     case "psychic":
@@ -42,7 +42,7 @@ const getBackgroundColorByType = (type) => {
     case "steel":
       return "#B8B8D0";
     case "water":
-      return "#6890F0";
+      return "#71C3FF";
     default:
       return "transparent";
   }
@@ -60,7 +60,7 @@ export const Cardbox = styled.div`
   padding: 1.5rem;
   width: 440px;
   height: 210px;
-  background: ${(props) => getBackgroundColorByType(props.type)};
+  background: ${(props) => getBackgroundColorByType(props.types)};
 `;
 export const DetailsPokemon = styled.div`
   margin-top: 2rem;

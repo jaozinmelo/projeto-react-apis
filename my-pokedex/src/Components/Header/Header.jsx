@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { goToPokelistPage, goToPokedexPage } from "../../Router/Coordinator";
 import {
   AddToPokedexButton,
@@ -14,7 +14,8 @@ import arrowleft from '../../assets/images/arrowleft.png'
 function Header() {
   // hook para saber nosso path atual
   const location = useLocation();
-
+  const {name, types, id} = useParams();
+  const detailPage = `/detailPage/${name}/${types}/${id}`
   // hook para redirecionar
   const navigate = useNavigate();
 
@@ -38,7 +39,7 @@ function Header() {
             <LogoPokedex src={pokedexlogo} />
           </DivButton>
         );
-      case "/detail-page":
+      case detailPage:
         return (
           <>
             <ButtonPokelist onClick={() => goToPokelistPage(navigate)}>

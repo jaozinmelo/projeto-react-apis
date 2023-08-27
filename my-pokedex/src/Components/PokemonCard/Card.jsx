@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import {
   AvatarPokemon,
-  ButtonDiv,
   CapturarButton,
   CardContainer,
   Cardbox,
@@ -9,13 +8,11 @@ import {
   DetailsPokemonButton,
   ImagePokebola,
   ImagePokemon,
-  PokeTypes,
   PokeTypesImg,
   PokemonId,
   PokemonName,
   PokemonType,
   RemoveButton,
-  TextPokemonType,
   TypeOfPokemon,
 } from "./styles";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -25,7 +22,7 @@ import { getTypeImageByType } from "../../assets/functionType/functionType";
 import { goToDetailsPage } from "../../Router/Coordinator";
 
 function Card({ pokemon }) {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const location = useLocation();
   const { addToPokemon, removePokemon } = useContext(CardFunctionsContext);
   const renderButtonCard = () => {
@@ -53,7 +50,7 @@ function Card({ pokemon }) {
 
   return (
     <CardContainer>
-      <Cardbox type={pokemon.types[0].type.name}>
+      <Cardbox types={pokemon.types[0].type.name}>
         <DetailsPokemon>
           {pokemon.id < 10 ? (
             <PokemonId>{`#0${pokemon.id}`}</PokemonId>
@@ -74,16 +71,27 @@ function Card({ pokemon }) {
               })}
             </PokemonType>
           </TypeOfPokemon>
-          <DetailsPokemonButton onClick={()=> goToDetailsPage(navigate, pokemon.id)}>Detalhes</DetailsPokemonButton>
+          <DetailsPokemonButton
+            onClick={() =>
+              goToDetailsPage(
+                navigate,
+                pokemon.name,
+                pokemon.types[0].type.name,
+                pokemon.id
+              )
+            }
+          >
+            Detalhes
+          </DetailsPokemonButton>
         </DetailsPokemon>
-        
+
         <AvatarPokemon>
-          <ImagePokebola src={pokebola}/>
+          <ImagePokebola src={pokebola} />
           <ImagePokemon
             src={pokemon.sprites.other.dream_world.front_default}
             alt={`${pokemon.name} Image`}
           />
-          
+
           {renderButtonCard()}
         </AvatarPokemon>
       </Cardbox>
