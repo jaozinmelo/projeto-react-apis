@@ -9,16 +9,38 @@ import {
   LogoPokedex,
 } from "./styles";
 import pokedexlogo from "../../assets/images/pokedexlogo.png";
-// import { BiChevronLeft } from "react-icons/bi";
-import arrowleft from '../../assets/images/arrowleft.png'
+import arrowleft from "../../assets/images/arrowleft.png";
+import { useContext } from "react";
+import { CardFunctionsContext } from "../../Contexts/CardFunctionsContext";
+import { PokemonContext } from "../../Contexts/PokemonContext";
 function Header() {
-  // hook para saber nosso path atual
   const location = useLocation();
-  const {name, types, id} = useParams();
-  const detailPage = `/detailPage/${name}/${types}/${id}`
-  // hook para redirecionar
   const navigate = useNavigate();
 
+  const { name, types, id } = useParams();
+  const detailPage = `/detailPage/${name}/${types}/${id}`;
+
+  const { pokemons } = useContext(PokemonContext);
+  const pokemon = pokemons.find((pokemon) => pokemon.name === name);
+  const { pokemonCart, addToPokemon, removePokemon } =
+    useContext(CardFunctionsContext);
+
+  const checkPokemon = pokemonCart.find((pokemon) => pokemon.name === name);
+  const renderButton = () => {
+    if (!checkPokemon) {
+      return (
+        <AddToPokedexButton onClick={() => addToPokemon(pokemon, pokemon.name)}>
+          Adicionar Pokemon
+        </AddToPokedexButton>
+      );
+    } else {
+      return (
+        <AddToPokedexButton onClick={() => removePokemon(pokemon.id)}>
+          Remover Pokemon
+        </AddToPokedexButton>
+      );
+    }
+  };
   const renderHeader = () => {
     switch (location.pathname) {
       case "/":
@@ -46,7 +68,7 @@ function Header() {
               <img src={arrowleft} alt="seta para esquerda" /> TODOS POKÉMONS
             </ButtonPokelist>
             <LogoPokedex src={pokedexlogo} />
-            <AddToPokedexButton>Adicionar Pokemon</AddToPokedexButton>
+            {renderButton()}
           </>
         );
       default:

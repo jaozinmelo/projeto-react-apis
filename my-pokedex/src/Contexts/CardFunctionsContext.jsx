@@ -1,38 +1,13 @@
 import { createContext, useEffect, useState } from "react";
-import { toast } from "react-toastify";
 
 export const CardFunctionsContext = createContext();
 
 export const CardFunctionsProvider = ({ children }) => {
   const [pokemonCart, setPokemonCart] = useState([]);
   const [name, setName] = useState([]);
-  const [pokemonAmount, setPokemonAmout] = useState(0);
-  const [currentPage, setCurrentPage] = useState(1);
-
-  //PAGINAÇÃO
-  const pokemonsPerPage = 10;
-  const getCurrentPokemons = () => {
-    const indexLastPokemon = currentPage * pokemonsPerPage;
-    const indexFirstPokemon = indexLastPokemon - pokemonsPerPage;
-    return pokemonCart.slice(indexFirstPokemon, indexLastPokemon);
-  };
-  const nextPage = () => {
-    setCurrentPage((prevPage) => +1);
-  };
-  const prevPage = () => {
-    setCurrentPage((prevPage) => -1);
-  };
-  useEffect(() => {
-    if (pokemonCart) {
-      const amount = pokemonCart.reduce(
-        (acumulator, currentItem) => acumulator + 1,
-        0
-      );
-      setPokemonAmout(amount);
-    }
-  }, [pokemonCart]);
 
   //FUNÇÕES DO CARD
+
   const addToPokemon = (pokemon, name) => {
     const checkPokemon = pokemonCart.find((pokemon) => pokemon.name === name);
     //pokemoncart.filter((item) => item.id !== id)
@@ -42,7 +17,8 @@ export const CardFunctionsProvider = ({ children }) => {
       // return;
       alert(`esse pokemon já foi adicionado`);
     } else {
-      setPokemonCart([...pokemonCart, { ...pokemon, name, amount: 1 }]);
+      setPokemonCart([...pokemonCart, { ...pokemon, name }]);
+
       alert(`O Pokemon ${name} foi adicionado à sua pokedex!`);
     }
   };
@@ -79,15 +55,10 @@ export const CardFunctionsProvider = ({ children }) => {
     <CardFunctionsContext.Provider
       value={{
         pokemonCart,
-        pokemonAmount,
         searchByNamePokemon,
         addToPokemon,
         removePokemon,
         removeAllClearPokemon,
-        pokemonsPerPage,
-        getCurrentPokemons,
-        nextPage,
-        prevPage,
         name,
       }}
     >

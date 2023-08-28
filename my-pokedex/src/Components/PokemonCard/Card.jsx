@@ -25,6 +25,7 @@ function Card({ pokemon }) {
   const navigate = useNavigate();
   const location = useLocation();
   const { addToPokemon, removePokemon } = useContext(CardFunctionsContext);
+
   const renderButtonCard = () => {
     switch (location.pathname) {
       case "/":

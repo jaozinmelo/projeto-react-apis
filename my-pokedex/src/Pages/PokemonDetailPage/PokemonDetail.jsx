@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import {
-  BaseStats,
   BaseStatusContainter,
   ContainerMoves,
   ContainerMovesAndMiniCard,
@@ -15,7 +14,6 @@ import {
   ProgressionBar,
   SectionDetail,
   StatsLines,
-  StatsBase,
   StatsNumbers,
   BaseStatsDiv,
 } from "./styles";
