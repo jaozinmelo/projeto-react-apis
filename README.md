@@ -1,61 +1,106 @@
-# **Projeto React e API's**
-O Projeto React e APIs é um site de pokémons que possui três páginas: Home, Pokedex e Detalhes. O projeto está subdivido em temas de acordo com os conteúdos que estudado durante o Módulo 2 - Frontend.
+Surge Link:
+friendly-farmer.surge.sh
 
-Este projeto terá como fonte de dados para a sua criação a [Poke Api](https://pokeapi.co/ "Poke Api"), uma Api pública, muito usada para aplicações focadas em aprendizado de programação e também usada em cases de processos seletivos.
+POKEDEX
 
-Os conteúdos principais  a serem estudados são:
+Resumo do Projeto
+O projeto "Pokedex" oferece uma experiência completa de exploração de Pokémon. Com recursos de captura, os usuários podem adicionar novos Pokémon à sua coleção. Além disso, detalhes abrangentes sobre cada Pokémon, como estatísticas e habilidades, podem ser visualizados. A flexibilidade de excluir Pokémon da coleção também está disponível. Essa aplicação proporciona uma jornada envolvente para os fãs, permitindo que interajam com os Pokémon de maneiras diversas e significativas.
 
-- Integração de APIs
-- React Router
-- Design Systems
-- Estado Global
+O projeto terá como fonte de dados para a sua criação a Poke Api, uma Api pública, muito usada para aplicações focadas em aprendizado de programação e também usada em cases de processos seletivos.
 
-## **Enunciado**
-É objetivo deste projeto criar um site com três páginas usando a Poke Api com as seguintes ferramentas:
+Os conteúdos principais a serem estudados são:
 
-- React
-- React Router
-- Styled-components
-- React Context
-- Axios
-
-### **Requisitos**
-- **Gerais:**
-	- [ ] O site deve ter 3 páginas: Home, Pokedex e Detalhes;
-	- [ ] Projeto deve seguir o [design](https://www.figma.com/file/KseyA2Ofghiek2Cy3ZaDre/Poked%C3%A9x?t=AEi3zEmWmarf1FbP-0 "design") proposto;
-	- [ ] O fluxo de trocas de páginas devem ser semelhante ao [fluxograma](https://www.figma.com/proto/KseyA2Ofghiek2Cy3ZaDre/Poked%C3%A9x?page-id=0%3A1&node-id=2%3A2&viewport=358%2C197%2C0.27&scaling=scale-down&starting-point-node-id=2%3A2 "fluxograma");
-- **Página Home:**
-	- [ ]  Mostrar uma lista de Pokemons, contendo ao menos 20 Pokemons;
-	- [ ] Cada Pokemon será representado por um Card;
-	- [ ] Em cada card de Pokemon tem um botão para adicioná-lo à Pokedex e um outro botão para acessar os detalhes do Pokemon;
-	- [ ] Header dessa página terá um botão para acessar a página da Pokedex
-- **Página Pokédex**
-	- [ ] Renderizar a lista de pokémons adicionados na pokedex;
-	- [ ] Em cada card de Pokemon deve ter um botão para removê-lo da Pokedex e um outro botão para acessar os detalhes do Pokemon.
-	- [ ] Header deve ter um botão para voltar para a Home
-	- [ ] Não deve ser possível adicionar o mesmo Pokemon duas vezes na Pokedex
-- **Página de Detalhes**
-	- [ ] Mostrar os detalhes do Pokemon selecionado, com informações descritas
-	- [ ] Header deve ter um botão para adicionar ou remover da Pokedex e outro para voltar a página home.
-- [ ] [Criar um readme](https://www.youtube.com/watch?v=1QKwP0SJK-c "Crie um readme") para o projeto;
+-Integração de APIs React Router Design Systems Estado Global.
+-Definição do Produto e Funcionalidade.
 
 
-### Instruções para preparar o seu repositório
 
-- Faça o fork desse repositório e realize o clone da sua cópia `seu-nome-de-usuario/projeto-lista-intro-javascript`.
-   <details>
-   <summary>Quer uma dica?</summary>
-   <img src="https://firebasestorage.googleapis.com/v0/b/assets-conteudo.appspot.com/o/gerais%2Ffork.png?alt=media&token=7030e997-246a-41fe-a75f-2a2ced61e54d" alt="Como adicionar o projeto no repositório"/>
-   </details>
-- Crie os arquivos do projeto dentro deste repo;
-- **Lembre-se de abrir os PRs para seu próprio repositório.**
-- Para isso, você precisará fazer o projeto utilizando **branches**. Não faça as alterações direto na branch ```main```!
 
-### Instruções de entrega
+-PokemonListPage
 
-![image](https://user-images.githubusercontent.com/71137294/227538428-52271ed2-df78-4500-b286-25f03aa7bf2e.png)
-1.  [Crie o surge](https://labenu.notion.site/Deploy-de-front-React-com-Surge-f902a03ec1d247dc9af9aee5a1469d96) do seu projeto e pegue o link da publicação(deploy);
-2.  Adicione o link do surge no readme do seu projeto;
-3.  Tire print das páginas do seu projeto e cole no readme;
-4.  Abra um novo Pull Request (PR) com a frase **PR para correção**. Caso não saiba como fazê-lo, assista a esse [vídeo](https://vimeo.com/842884374/3e403f4281?share=copy).
-5.  Envie o link do seu PR e do surge no [formulário de entrega](https://docs.google.com/forms/d/e/1FAIpQLSfGGRaglpzWpdREBBfq3eUCMXkRXuiS61Zfyy0L_Ce0uNIXTA/viewform).
+Na PokemonListPage o usuário tem a possibilidade de visuálizar os pokemons, com recursos de capturar, visualizar detalhamento e verificar a sua pokedex personalizada.
+
+
+
+
+-PokedexPage
+
+Na PokedexPage o usuário tem a possibilidade de visualizar todos os pokemons capturados, com recursos de excluir e vialuzar detalhamento, atualizando a página seus dados permaneceram salvos.
+
+
+
+-PokemonDetailPage
+
+Na PokemonDetailPage o usuário tem a possibilidade de visualizar todos os detalhes do pokemon, com recursos de capturar caso ele já não esteja na sua pokedex ou excluir se ele já estiver nela.
+
+
+
+
+-PokemonCard
+
+O botão detalhes Direciona para página onde será possível ver todos os dados e adicionar e/ou remover o pokemon da pokedex.
+
+O botão Capturar Captura o pokemon selecionado e o envia para pokedex.
+
+
+
+
+-Instalação:
+
+Node.js
+npm
+
+
+-Para instalar as dependências no diretório do seu projeto, execute o seguinte comando:
+npm install
+
+
+-Para iniciar o aplicativo, execute o seguinte comando:
+npm run start
+
+
+
+-Tecnologias e Ferramentas Utilizadas
+Este site foi construído com as seguintes tecnologias:
+
+React
+React-Hooks
+React-Router-Dom
+React useContext
+Api-rest
+Axios
+Styled-Components
+React-icons
+
+
+-Estrutura do projeto
+
+
+Arquivo src
+Contém todas as pastas e arquivos do projeto.
+
+Pasta assets
+Contém todas as imagens dos types dos pokemons e outras usadas neste projeto.
+
+Pasta Components
+Contém:
+
+PokemonCard -> renderiza informações e botões para pokemon.
+Header -> cada página terá um header com uma interface específica.
+Pasta constants
+Contém a Url padrão da API utilizada.
+
+Pasta contexts
+Contém os arquivos de contexto utilizado no projeto.
+
+Pasta Pages
+Contém:
+
+PokemonListPage -> Página inicial, onde haverá a lista de pokemons para interagir.
+PokemonDetailPage -> detalhes do pokemon selecionado.
+PokedexPage - Página onde terá os pokemons adicionados.
+Pasta routes
+Contém :
+
+coordinator -> retorna funções (buttons) para navegação entre as páginas . Utilizando parâmetros para seu destino.
+Router-> Componente que armazena o controle das páginas , identificando cada uma com um valor que é passado para coordinator e será utilizado no App.js
